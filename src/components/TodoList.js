@@ -29,3 +29,5 @@ TodoList.propTypes = {
     ),
   ).isRequired,
 };
+
+export default TodoList;
