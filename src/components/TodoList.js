@@ -17,3 +17,15 @@ class TodoList extends React.Component {
     );
   }
 }
+
+TodoList.propTypes = {
+  id: PropTypes.string.isRequired,
+  todos: PropTypes.arrayOf(
+    PropTypes.objectOf(
+      PropTypes.oneOfType([
+        PropTypes.string,
+        PropTypes.number,
+      ]),
+    ),
+  ).isRequired,
+};
