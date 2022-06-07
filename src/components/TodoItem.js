@@ -12,4 +12,15 @@ class TodoItem extends React.Component {
   }
 }
 
+TodoItem.propTypes = {
+  todo: PropTypes.arrayOf(
+    PropTypes.objectOf(
+      PropTypes.oneOfType([
+        PropTypes.string,
+        PropTypes.number,
+      ]),
+    ),
+  ).isRequired,
+};
+
 export default TodoItem;
