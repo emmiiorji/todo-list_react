@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import TodoList from './TodoList';
+import Header from './Header';
 
 const TodoContainer = ({ id }) => {
   const [state, setState] = useState({
@@ -24,21 +25,23 @@ const TodoContainer = ({ id }) => {
   });
 
   const handleChange = (id) => {
-    setState((state) => {
-      const todos = state.todos.map((todo) => {
-        let { completed } = todo;
+    setState((prevState) => ({
+      todos: prevState.todos.map((todo) => {
         if (todo.id === id) {
-          completed = !completed;
+          return {
+            ...todo,
+            completed: !todo.completed,
+          };
         }
-        return { ...todo, ...{ completed } };
-      });
-      return { ...state, ...{ todos } };
-    });
+        return todo;
+      }),
+    }));
   };
 
   return (
     <div id={id}>
-      <TodoList id="todo-list" todos={state.todos} onChange={handleChange} />
+      <Header id="header" />
+      <TodoList id="todo-list" todos={state.todos} onStatusChange={handleChange} />
     </div>
   );
 };
