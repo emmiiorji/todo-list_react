@@ -25,16 +25,17 @@ const TodoContainer = ({ id }) => {
   });
 
   const handleChange = (id) => {
-    setState((state) => {
-      const todos = state.todos.map((todo) => {
-        let { completed } = todo;
+    setState((prevState) => ({
+      todos: prevState.todos.map((todo) => {
         if (todo.id === id) {
-          completed = !completed;
+          return {
+            ...todo,
+            completed: !todo.completed,
+          };
         }
-        return { ...todo, ...{ completed } };
-      });
-      return { ...state, ...{ todos } };
-    });
+        return todo;
+      }),
+    }));
   };
 
   return (
