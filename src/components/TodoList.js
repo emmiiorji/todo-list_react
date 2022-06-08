@@ -25,7 +25,10 @@ TodoList.propTypes = {
       PropTypes.oneOfType([
         PropTypes.string,
         PropTypes.number,
+        PropTypes.bool,
       ]),
     ),
   ).isRequired,
 };
+
+export default TodoList;
