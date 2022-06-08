@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import TodoList from './TodoList';
+import Header from './Header';
 
 const TodoContainer = ({ id }) => {
   const [state, setState] = useState({
@@ -38,7 +39,8 @@ const TodoContainer = ({ id }) => {
 
   return (
     <div id={id}>
-      <TodoList id="todo-list" todos={state.todos} onChange={handleChange} />
+      <Header id="header" />
+      <TodoList id="todo-list" todos={state.todos} onStatusChange={handleChange} />
     </div>
   );
 };
