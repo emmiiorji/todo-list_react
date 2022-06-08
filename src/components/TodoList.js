@@ -10,9 +10,16 @@ class TodoList extends React.Component {
   }
 
   render() {
+    const { onStatusChange } = this.props;
     return (
       <ul id={this.id}>
-        {this.todos.map((todo) => <TodoItem key={todo.id} todo={todo} />)}
+        {this.todos.map((todo) => (
+          <TodoItem
+            key={todo.id}
+            todo={todo}
+            onStatusChange={onStatusChange}
+          />
+        ))}
       </ul>
     );
   }
@@ -29,6 +36,7 @@ TodoList.propTypes = {
       ]),
     ),
   ).isRequired,
+  onStatusChange: PropTypes.func.isRequired,
 };
 
 export default TodoList;
