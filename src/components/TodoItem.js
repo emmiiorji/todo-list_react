@@ -17,6 +17,7 @@ TodoItem.propTypes = {
     PropTypes.oneOfType([
       PropTypes.string,
       PropTypes.number,
+      PropTypes.bool,
     ]),
   ).isRequired,
 };
