@@ -2,7 +2,6 @@
   "name": "todo-list_react",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://list-my-todos.herokuapp.com",
   "dependencies": {
     "@testing-library/jest-dom": "^5.16.4",
     "@testing-library/react": "^13.3.0",
