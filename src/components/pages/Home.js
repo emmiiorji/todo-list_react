@@ -46,7 +46,7 @@ const Home = () => {
         if (todo.id === id) {
           return {
             ...todo,
-            completed: !todo.completed,
+            title: updatedTitle,
           };
         }
         return todo;

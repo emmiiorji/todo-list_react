@@ -8,13 +8,9 @@ const TodoItem = ({
 }) => {
   const { completed, id, title } = todo;
   const [editing, setEditing] = useState(false);
-  const [count, setCount] = useState(1);
 
   const handleEditing = () => {
-    setCount((prevState) => prevState + 1);
-    if (count % 2 === 0) {
-      setEditing(true);
-    }
+    setEditing(true);
   };
 
   const handleUpdatedDone = (e) => {
@@ -46,7 +42,7 @@ const TodoItem = ({
 
   return (
     <li className={styles.item}>
-      <div onClick={handleEditing} role="button" tabIndex={0} onKeyDown={handleKeyDown} style={viewMode}>
+      <div onDoubleClick={handleEditing} role="button" onKeyDown={handleKeyDown} tabIndex={0} style={viewMode}>
         <input
           name="checkbox"
           type="checkbox"
