@@ -7,9 +7,9 @@ This project, created with react, is a list manager that will allow a user organ
 - CSS
 - React
 
-<!-- ## Live Demo
+## Live Demo
 
-[Live Demo Link](https://emmiiorji.github.io/math-magicians-app/) -->
+[Live Demo Link](https://list-my-todos.herokuapp.com/)
 
 
 ## Getting Started
